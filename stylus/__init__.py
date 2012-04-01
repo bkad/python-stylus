@@ -28,7 +28,7 @@ class Stylus(object):
     self._context = None
     self._backend = None
 
-  def use(self, plugin, arguments):
+  def use(self, plugin, arguments={}):
     """Add plugin to use during compilation.
 
     plugin: Plugin to include.
