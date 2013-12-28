@@ -22,9 +22,9 @@ class Stylus(object):
     """
 
     self.compress = compress
-    self.paths = paths
-    self.imports = imports
-    self.plugins = plugins
+    self.paths = list(paths)
+    self.imports = list(imports)
+    self.plugins = dict(plugins)
     self._context = None
     self._backend = None
 
@@ -34,7 +34,7 @@ class Stylus(object):
     plugin: Plugin to include.
     arguments: Dictionary of arguments to pass to the import.
     """
-    self.plugins[plugin] = arguments
+    self.plugins[plugin] = dict(arguments)
     return self.plugins
 
   def compile(self, source, options={}):
@@ -45,6 +45,7 @@ class Stylus(object):
 
     Returns a string of css resulting from the compilation
     """
+    options = dict(options)
     if "paths" in options:
       options["paths"] += self.paths
     else:
