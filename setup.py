@@ -8,7 +8,7 @@ with io.open('README.md') as description_file:
 
 setup(
     name="stylus",
-    version="0.1.1",
+    version="0.1.2",
     author="Kevin Le",
     description="A bridge to the Stylus css compiler",
     packages=["stylus"],
