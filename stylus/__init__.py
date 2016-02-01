@@ -9,7 +9,7 @@ node_modules = path.abspath("node_modules")
 if "NODE_PATH" not in os.environ:
   os.environ["NODE_PATH"] = node_modules
 elif node_modules not in os.environ["NODE_PATH"]:
-  os.environ["NODE_PATH"] += ":" + node_modules
+  os.pathsep.join((os.environ["NODE_PATH"], node_modules))
 
 
 class Stylus(object):
